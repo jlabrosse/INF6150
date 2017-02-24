@@ -6,7 +6,7 @@ server.use(express.static(__dirname + '/public'));
 
 server.get('/index', function(req, res, cb){
 	res.writeHeader(200, {"Content-type":"text/html"});
-	res.write("hello world");
+	res.write("hello world, une petite niaiserie");
 	res.end;
 	
 	return cb();
