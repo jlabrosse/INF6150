@@ -1,9 +1,8 @@
 var express = require("express");
 var server = express();
 
-server.url = "https://morning-brushlands-43984.herokuapp.com"
-
-//server.url = "localhost"
+server.set('port', (process.env.PORT || 5000));
+server.use(express.static(__dirname + '/public'));
 
 server.get('/index', function(req, res, cb){
 	res.writeHeader(200, {"Content-type":"text/html"});
@@ -13,6 +12,6 @@ server.get('/index', function(req, res, cb){
 	return cb();	
 });
 
-server.listen(8080, function(){
-	console.log("server is listening at %s:%s", server.url, 8080);
+server.listen(server.get('port'), function(){
+	console.log("server is listening at port %s", server.get('port'));
 });
