@@ -1,9 +1,9 @@
 var express = require("express");
 var server = express();
 
-//server.url = "http://morning-brushlands-43984.herokuapp.com"
+server.url = "http://morning-brushlands-43984.herokuapp.com"
 
-server.url = "localhost"
+//server.url = "localhost"
 
 server.get('/index', function(req, res, cb){
 	res.writeHeader(200, {"Content-type":"text/html"});
