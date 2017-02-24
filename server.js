@@ -1,7 +1,7 @@
 var express = require("express");
 var server = express();
 
-server.url = "http://morning-brushlands-43984.herokuapp.com"
+server.url = "https://morning-brushlands-43984.herokuapp.com"
 
 //server.url = "localhost"
 
