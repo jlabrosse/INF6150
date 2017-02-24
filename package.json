@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/jlabrosse/INF6150#readme",
   "dependencies": {
-     "express": "^4.14.0"
+    "express": "^4.14.1"
   }
 }
