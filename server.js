@@ -1,7 +1,7 @@
 var express = require('express');
 var server = express();
 
-server.set('port', (process.env.PORT || 5000));
+server.set('port', (process.env.PORT || 8080));
 server.use(express.static(__dirname + '/public'));
 
 server.get('/index', function(req, res, cb){
