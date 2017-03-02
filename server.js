@@ -5,8 +5,6 @@ var server = express();
 server.set('port', (process.env.PORT || 8080));
 server.use(express.static(__dirname + '/public'));
 
-console.log(aspirateur);
-
 function reponsehttp(res, body) {
 	res.writeHeader(200, {"Content-type":"text/html"});
 	res.write(body);
