@@ -11,7 +11,6 @@ function reponsehttp(res, body) {
 	res.end;
 };
 
-
 server.get('/requete/tous', function(req, res, cb){
 	aspirateur.tousLesObjets(function(resultat){
 		reponsehttp(res, resultat);
