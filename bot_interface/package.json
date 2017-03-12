@@ -1,13 +1,13 @@
 {
-  "name": "DiscordBot",
-  "version": "0.1.1",
-  "description": "Bot for Discord app",
+  "name": "Steven",
+  "version": "0.1",
+  "description": "Bot pour Discord et GW2",
   "readme": "README.md",
   "maintainers": [],
   "author": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chalda/DiscordBot.git"
+    "url": "git+https://github.com/jlabrosse/INF6150.git"
   },
   "license": "GPL-2.0",
   "dependencies": {
