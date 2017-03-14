@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jlabrosse/INF6150#readme",
   "dependencies": {
+    "events": "^1.1.1",
     "express": "^4.14.1",
     "node-cron": "^1.1.3"
   }

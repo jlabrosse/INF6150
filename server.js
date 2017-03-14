@@ -1,6 +1,6 @@
-var express = require('express');
-var aspirateur = require("./lib/aspirateur.js");
-var server = express();
+var express = require('express'),
+	requete = require("./lib/gw2SpidyRequete"),
+	server = express();
 
 server.set('port', (process.env.PORT || 8080));
 server.use(express.static(__dirname + '/public'));
@@ -11,7 +11,7 @@ function reponsehttp(res, body) {
 	res.end;
 };
 
-server.get('/requete/tous', function(req, res, cb){
+/*server.get('/requete/tous', function(req, res, cb){
 	aspirateur.tousLesObjets(function(resultat){
 		reponsehttp(res, resultat);
 		return cb();
@@ -37,7 +37,7 @@ server.get('/requete/objet/:nom', function(req, res, cb){
 		reponsehttp(res, resultat);
 		return cb();
 	});
-});
+});*/
 
 server.get('/index', function(req, res, cb){
 	reponsehttp(res, "Hello World");
