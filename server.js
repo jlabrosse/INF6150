@@ -11,37 +11,47 @@ function reponsehttp(res, body) {
 	res.end;
 };
 
-/*server.get('/requete/tous', function(req, res, cb){
-	aspirateur.tousLesObjets(function(resultat){
+server.get('/requete/tous', function(req, res, cb){
+	requete.tousLesObjets(function(resultat){
+		reponsehttp(res, resultat);
+		return cb();
+	});
+});
+
+server.get('/requete/type', function(req, res, cb){
+	requete.obtenirMapType(function(resultat){
 		reponsehttp(res, resultat);
 		return cb();
 	});
 });
 
 server.get('/requete/type/:type', function(req, res, cb){
-	aspirateur.parType(req.params.type, function(resultat){
+	requete.parType(req.params.type, function(resultat){
+		reponsehttp(res, resultat);
+		return cb();
+	});
+});
+
+
+server.get('/requete/rarete', function(req, res, cb){
+	requete.obtenirMapRarete(function(resultat){
 		reponsehttp(res, resultat);
 		return cb();
 	});
 });
 
 server.get('/requete/rarete/:rarete', function(req, res, cb){
-	aspirateur.parRarete(req.params.rarete, function(resultat){
+	requete.parRarete(req.params.rarete, function(resultat){
 		reponsehttp(res, resultat);
 		return cb();
 	});
 });
 
 server.get('/requete/objet/:nom', function(req, res, cb){
-	aspirateur.obtenirObjet(req.params.nom, function(resultat){
+	requete.obtenirObjet(req.params.nom, function(resultat){
 		reponsehttp(res, resultat);
 		return cb();
 	});
-});*/
-
-server.get('/index', function(req, res, cb){
-	reponsehttp(res, "Hello World");
-	return cb();
 });
 
 server.listen(server.get('port'), function(){
