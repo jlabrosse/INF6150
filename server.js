@@ -1,5 +1,5 @@
 var express = require('express');
-var interface = require("./bot_interface/discord_bot.js");
+var interface = require("./lib/steven_bot.js");
 var server = express();
 
 server.set('port', (process.env.PORT || 5000));
