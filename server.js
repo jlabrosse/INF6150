@@ -1,18 +1,21 @@
-var express = require('express');
-var interface = require("./lib/steven_bot.js");
-var server = express();
+var express = require('express'),
+    interface = require("./lib/steeven_bot/steven_bot.js"),
+    gw2requete = require("./lib/gw2SpidyRequete.js"),
+    logger = require('./lib/logger.js'),
+    server = express();
 
 server.set('port', (process.env.PORT || 5000));
 server.use(express.static(__dirname + '/public'));
 
-server.get('/index', function(req, res, cb){
+server.get('/', function(req, res, cb){
+    logger.log('info', "Requete HTTP recu par GET \'/\'.")
 	res.writeHeader(200, {"Content-type":"text/html"});
-	res.write("hello world, une petite niaiserie");
+	res.write("Le serveur est en vie!");
 	res.end;
 	
 	return cb();
 });
 
 server.listen(server.get('port'), function(){
-	console.log("le server ecoute sur: %s", server.get('port'));
+	logger.log('info', "le server ecoute sur: %s", server.get('port'));
 });
