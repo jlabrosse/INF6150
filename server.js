@@ -5,6 +5,7 @@ var express = require('express'),
     gw2requete = require("./lib/gw2SpidyRequete.js"),
     logger = require('./lib/logger.js'),
     logpath = './server.log',
+	processeur = require('./lib/processeur/changementPrix.js'),
     server = express();
 
 server.set('port', (process.env.PORT || 5000));
