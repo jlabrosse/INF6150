@@ -2,11 +2,10 @@ var express = require('express'),
     fs = require('fs'),
     rl = require('readline'),
     interface = require("./lib/steeven_bot/steven_bot.js"),
-    processeur = require("./lib/processeur/changementPrix.js"),
+    processeur = require("./lib/processeur/processeur.js"),
     gw2requete = require("./lib/gw2SpidyRequete.js"),
     logger = require('./lib/logger.js'),
     logpath = './server.log',
-	processeur = require('./lib/processeur/changementPrix.js'),
     server = express();
 
 server.set('port', (process.env.PORT || 5000));
