@@ -11,7 +11,6 @@ var express = require('express'),
 server.set('port', (process.env.PORT || 5000));
 server.use(express.static(__dirname + '/public'));
 
-
 function logToJson(logfile, callback){
     var ret = [];
     var linereader = rl.createInterface({
@@ -50,3 +49,5 @@ server.get('/log', function(req, res, cb){
 server.listen(server.get('port'), function(){
 	logger.log('info', "le server ecoute sur: %s", server.get('port'));
 });
+
+gw2requete.initialiser();
