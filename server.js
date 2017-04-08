@@ -49,9 +49,9 @@ server.get('/log', function(req, res, cb){
 server.get('/test_proc', function(req, res, cb){
     res.writeHeader(200, {"Content-type":"application/json"});
     res.write('LISTE CHANGEMENT PRIX #########################\n' +
-              JSON.stringify(processeur.listeChangementPrix, null, 2) + 
+              JSON.stringify(processeur.changementPrix(50), null, 2) + 
               '\nMEILLEUR PROFITS ##################\n' +
-              JSON.stringify(processeur.listeMeilleursProfits, null, 2)
+              JSON.stringify(processeur.meilleursProfits(50), null, 2)
     );
     res.end();
 
