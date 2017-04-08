@@ -31,7 +31,7 @@ server.get('/', function(req, res, cb){
     logger.log('info', "Requete HTTP recu par GET \'/\'.")
 	res.writeHeader(200, {"Content-type":"text/html"});
 	res.write("Le serveur est en vie!");
-	res.end;
+	res.end();
 	
 	return cb();
 });
@@ -40,10 +40,22 @@ server.get('/log', function(req, res, cb){
     logToJson(logpath, function(result){
         res.writeHeader(200, {"Content-type":"application/json"});
         res.write(result);
-        res.end;
+        res.end();
 
         return cb();
     });
+});
+
+server.get('/test_proc', function(req, res, cb){
+    res.writeHeader(200, {"Content-type":"application/json"});
+    res.write('LISTE CHANGEMENT PRIX #########################\n' +
+              JSON.stringify(processeur.listeChangementPrix, null, 2) + 
+              '\nMEILLEUR PROFITS ##################\n' +
+              JSON.stringify(processeur.listeMeilleursProfits, null, 2)
+    );
+    res.end();
+
+    return cb();
 });
 
 server.listen(server.get('port'), function(){
