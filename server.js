@@ -46,6 +46,42 @@ server.get('/log', function(req, res, cb){
     });
 });
 
+function reponsehttp(res, body) {
+    res.writeHeader(200, {"Content-type":"application/json"});
+    res.write(body);
+    res.end();
+};
+
+server.get('/gw2requete/tous', function(req, res, cb){
+    reponsehttp(res, JSON.stringify(gw2requete.tousLesObjets(), null, 2));
+    return cb();
+});
+
+server.get('/gw2requete/type', function(req, res, cb){
+    reponsehttp(res, JSON.stringify(gw2requete.obtenirMapType(), null, 2));
+    return cb();
+});
+
+server.get('/gw2requete/rarete', function(req, res, cb){
+    reponsehttp(res, JSON.stringify(gw2requete.obtenirMapRarete(), null, 2));
+    return cb();
+});
+
+server.get('/gw2requete/type/:type', function(req, res, cb){
+    reponsehttp(res, JSON.stringify(gw2requete.parType(req.params.type), null, 2));
+    return cb();
+});
+
+server.get('/gw2requete/rarete/:rarete', function(req, res, cb){
+    reponsehttp(res, JSON.stringify(gw2requete.parRarete(req.params.rarete), null, 2));
+    return cb();
+});
+
+server.get('/gw2requete/objet/:nom', function(req, res, cb){
+    reponsehttp(res, JSON.stringify(gw2requete.parNom(req.params.nom), null, 2));
+    return cb();
+});
+
 server.get('/test_proc', function(req, res, cb){
     res.writeHeader(200, {"Content-type":"application/json"});
     res.write('LISTE CHANGEMENT PRIX #########################\n' +
